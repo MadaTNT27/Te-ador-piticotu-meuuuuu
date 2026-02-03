@@ -35,18 +35,22 @@
     .love-text{font-size:19px;font-weight:700;color:var(--deep)}
     .date{margin-top:10px;font-weight:600;color:#a01846}
 
-    .heart-beat{
-      margin:18px auto;width:40px;height:40px;background:var(--deep);
-      transform:rotate(-45deg);animation:beat 1s infinite
+    /* SMALL HEART NEAR DATE */
+    .heart-wrap{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:10px}
+    .mini-heart{
+      width:18px;height:18px;background:var(--deep);
+      transform:rotate(-45deg);position:relative;
+      animation:softbeat 1.4s infinite
     }
-    .heart-beat:before,.heart-beat:after{
-      content:"";position:absolute;width:40px;height:40px;background:var(--deep);border-radius:50%
+    .mini-heart:before,.mini-heart:after{
+      content:"";position:absolute;width:18px;height:18px;background:var(--deep);border-radius:50%
     }
-    .heart-beat:before{top:-20px}
-    .heart-beat:after{left:20px}
-
-    @keyframes beat{
+    .mini-heart:before{top:-9px}
+    .mini-heart:after{left:9px}
+    @keyframes softbeat{
       0%,100%{transform:rotate(-45deg) scale(1)}
+      50%{transform:rotate(-45deg) scale(1.15)}
+    }
       50%{transform:rotate(-45deg) scale(1.25)}
     }
 
@@ -120,8 +124,15 @@
 
   <p id="promise" style="margin-top:14px;font-size:16px;color:#5a1532;min-height:120px"></p>
 
-  <div class="date">14 februarie ❤️</div>
-  <div class="heart-beat"></div>
+  <div class="heart-wrap">
+  <div class="date">14 februarie</div>
+  <div class="mini-heart"></div>
+</div>
+
+<p style="margin-top:16px;font-size:15px;color:#7a1d45;font-style:italic">
+  Dacă m-ar întreba cineva unde e locul meu în lume…
+  <br/>aș spune fără să clipesc: <strong>lângă tine</strong>.
+</p>
   <button class="question-btn" onclick="openPopup()">Am o întrebare pentru tine 💌</button>
 </div>
 
@@ -138,6 +149,12 @@
 <div class="final" id="final">
   <div class="hearts" id="hearts"></div>
   <h1>TE IUBESC ❤️</h1>
+<p style="margin-top:14px;font-size:18px;color:#7a1d45;text-align:center;max-width:320px">
+  Și te-aș alege din nou.<br/>
+  În fiecare zi.<br/>
+  În fiecare viață.
+</p>
+<div class="mini-heart" style="margin-top:18px"></div>
 </div>
 
 <div class="signature">Cu drag, nebunu' tău</div>
